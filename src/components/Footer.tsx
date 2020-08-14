@@ -115,7 +115,7 @@ const useStyles = makeStyles((theme: Theme) =>
         maxWidth: 1280,
         margin: "0 auto",
         width: "100%",
-        padding: "40px 100px 80px",
+        padding: "40px 140px 80px",
         boxSizing: "border-box",
       },
       title: {

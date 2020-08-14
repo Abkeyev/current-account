@@ -7,6 +7,7 @@ import {
   Sale,
   Useful,
   Footer,
+  Additional,
 } from "./components";
 import "./App.css";
 import { useTranslation } from "react-i18next";
@@ -37,6 +38,7 @@ function App() {
       <Sale lang={lang} />
       <Online refProp={orderRef} />
       <Benefits />
+      <Additional />
       <Useful />
       <CallUs />
       <Footer />

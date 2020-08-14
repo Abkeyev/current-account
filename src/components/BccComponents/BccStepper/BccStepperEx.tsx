@@ -1,15 +1,15 @@
-import React from "react";
-import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
-import BccStepLabel from "./BccStepLabel/BccStepLabel";
-import BccStepper from "./BccStepper";
-import BccStep from "./BccStep/BccStep";
-import BccButton from "../BccButton/BccButton";
-import BccTypography from "../BccTypography/BccTypography";
+import React from 'react'
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
+import BccStepLabel from '../BccStepper/BccStepLabel/BccStepLabel'
+import BccStepper from '../BccStepper/BccStepper'
+import BccStep from '../BccStepper/BccStep/BccStep'
+import BccButton from '../BccButton/BccButton'
+import BccTypography from '../BccTypography/BccTypography'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      width: "100%",
+      width: '100%',
     },
     backButton: {
       marginRight: theme.spacing(1),
@@ -19,46 +19,46 @@ const useStyles = makeStyles((theme: Theme) =>
       marginBottom: theme.spacing(1),
     },
   })
-);
+)
 
 function getSteps() {
-  return ["Личные данные", "Контакты", "Печать"];
+  return ['Личные данные', 'Контакты', 'Печать']
 }
 
 function getStepContent(stepIndex: number) {
   switch (stepIndex) {
     case 0:
-      return "Заполните личные данные";
+      return 'Заполните личные данные'
     case 1:
-      return "Заполните контакты";
+      return 'Заполните контакты'
     case 2:
-      return "Распечатать";
+      return 'Распечатать'
     default:
-      return "Ошибка";
+      return 'Ошибка'
   }
 }
 
 const BccStepperEx = () => {
-  const classes = useStyles();
-  const [activeStep, setActiveStep] = React.useState(0);
-  const steps = getSteps();
+  const classes = useStyles()
+  const [activeStep, setActiveStep] = React.useState(0)
+  const steps = getSteps()
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
+    setActiveStep(prevActiveStep => prevActiveStep + 1)
+  }
 
   const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
+    setActiveStep(prevActiveStep => prevActiveStep - 1)
+  }
 
   const handleReset = () => {
-    setActiveStep(0);
-  };
+    setActiveStep(0)
+  }
 
   return (
     <div className={classes.root}>
       <BccStepper activeStep={activeStep}>
-        {steps.map((label) => (
+        {steps.map(label => (
           <BccStep key={label}>
             <BccStepLabel>{label}</BccStepLabel>
           </BccStep>
@@ -90,14 +90,14 @@ const BccStepperEx = () => {
                 color="primary"
                 onClick={handleNext}
               >
-                {activeStep === steps.length - 1 ? "Завершить" : "Далее"}
+                {activeStep === steps.length - 1 ? 'Завершить' : 'Далее'}
               </BccButton>
             </div>
           </div>
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BccStepperEx;
+export default BccStepperEx

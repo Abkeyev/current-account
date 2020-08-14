@@ -84,7 +84,7 @@ const useStyles = makeStyles((theme: Theme) =>
         maxWidth: 1280,
         margin: "0 auto",
         width: "100%",
-        padding: "40px 100px 60px",
+        padding: "40px 140px 60px",
         boxSizing: "border-box",
       },
       title: {
@@ -142,7 +142,7 @@ const items = [
   },
   {
     img: "/u2.svg",
-    content: [1, 2, 3, 4],
+    content: [1, 2, 3],
     url: "https://www.bcc.kz/product/system-internet-banking_yur/",
   },
   {

@@ -94,17 +94,24 @@ const useStyles = makeStyles((theme: Theme) =>
         boxSizing: "border-box",
       },
       title: {
-        marginBottom: 15,
+        marginBottom: 16,
       },
       subTitle: {
         marginBottom: 30,
         opacity: 0.7,
       },
       block: {
-        marginBottom: 30,
-      },
-      firstBlock: {
-        marginRight: 70,
+        "& > div:last-child": {
+          marginBottom: 30,
+        },
+        "& > div": {
+          marginBottom: 12,
+          "& > span:first-child": {
+            color: "#249052",
+            marginRight: 6,
+            fontSize: 24,
+          },
+        },
       },
       blockText: {
         marginBottom: 5,
@@ -200,69 +207,49 @@ const Banner = (props: any) => {
           >
             {t("banner.title_desc")}
           </BccTypography>
-          <Grid container direction="row" className={classes.block}>
-            <Grid item className={classes.firstBlock}>
+          <Grid container direction="column" className={classes.block}>
+            <Grid item>
+              <span>•</span>
               {props.lang === "ru" || props.lang === "en" ? (
                 <>
-                  <BccTypography
-                    type="h4"
-                    weight="bold"
-                    block
-                    className={classes.blockText}
-                  >
-                    {t("banner.block1")}
-                  </BccTypography>
-                  <BccTypography type="p2" block>
+                  <BccTypography type="p1">
                     {t("banner.block1_1")}{" "}
                     <span
                       className={classes.link}
                       onClick={(e: any) => onClickAppStore(e)}
                     >
                       {t("banner.block1_2")}
-                    </span>
+                    </span>{" "}
+                    - 0 ₸
                   </BccTypography>
                 </>
               ) : (
                 <>
-                  <BccTypography
-                    type="h4"
-                    weight="bold"
-                    block
-                    className={classes.blockText}
-                  >
-                    {t("banner.block1")}
-                  </BccTypography>
-                  <BccTypography type="p2" block>
+                  <BccTypography type="p1" block>
                     <span
                       className={classes.link}
                       onClick={(e: any) => onClickAppStore(e)}
                     >
                       {t("banner.block1_1")}
                     </span>{" "}
-                    {t("banner.block1_2")}
+                    {t("banner.block1_2")} - 0 ₸
                   </BccTypography>
                 </>
               )}
             </Grid>
             <Grid item>
-              <BccTypography
-                type="h4"
-                weight="bold"
-                block
-                className={classes.blockText}
-              >
-                {t("banner.block1")}
-              </BccTypography>
-              <BccTypography type="p2" block>
+              <span>•</span>
+              <BccTypography type="p1">
                 {props.lang === "ru" || props.lang === "en" ? (
                   <>
-                    {t("banner.block2_1")}{" "}
+                    {t("banner.block1_1")}{" "}
                     <span
                       className={classes.link}
                       onClick={(e) => onClickIB(e)}
                     >
-                      {t("banner.block2_2")}
-                    </span>
+                      {t("banner.block1_2")} (web)
+                    </span>{" "}
+                    - 0 ₸
                   </>
                 ) : (
                   <>
@@ -270,11 +257,17 @@ const Banner = (props: any) => {
                       className={classes.link}
                       onClick={(e) => onClickIB(e)}
                     >
-                      {t("banner.block2_1")}
+                      {t("banner.block1_1")} (web)
                     </span>{" "}
-                    {t("banner.block2_2")}
+                    {t("banner.block1_2")} - 0 ₸
                   </>
                 )}
+              </BccTypography>
+            </Grid>
+            <Grid item>
+              <span>•</span>
+              <BccTypography type="p1">
+                {t("banner.block3")} - 0 ₸
               </BccTypography>
             </Grid>
           </Grid>

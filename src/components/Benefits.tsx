@@ -85,9 +85,9 @@ const useStyles = makeStyles((theme: Theme) =>
 const items = [
   "/icons/online.svg",
   "/icons/internet.svg",
-  "/icons/starbusiness.svg",
-  "/icons/doc.svg",
+  "/icons/loan-tenge.svg",
   "/icons/currency.svg",
+  "/icons/doc.svg",
   "/icons/support.svg",
 ];
 

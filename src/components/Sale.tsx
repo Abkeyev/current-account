@@ -99,7 +99,9 @@ const useStyles = makeStyles((theme: Theme) =>
         alignSelf: "center",
       },
       starSteps: {
-        "& > span": {},
+        "& > span:last-child": {
+          fontWeight: "bold",
+        },
       },
       link: {
         display: "block",
