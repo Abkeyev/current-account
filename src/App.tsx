@@ -35,7 +35,6 @@ function App() {
         lang={lang}
         changeLang={handleLangChange}
       />
-      <Sale lang={lang} />
       <Online refProp={orderRef} />
       <Benefits />
       <Additional />

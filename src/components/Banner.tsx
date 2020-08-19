@@ -240,33 +240,6 @@ const Banner = (props: any) => {
             <Grid item>
               <span>•</span>
               <BccTypography type="p1">
-                {props.lang === "ru" || props.lang === "en" ? (
-                  <>
-                    {t("banner.block1_1")}{" "}
-                    <span
-                      className={classes.link}
-                      onClick={(e) => onClickIB(e)}
-                    >
-                      {t("banner.block1_2")} (web)
-                    </span>{" "}
-                    - 0 ₸
-                  </>
-                ) : (
-                  <>
-                    <span
-                      className={classes.link}
-                      onClick={(e) => onClickIB(e)}
-                    >
-                      {t("banner.block1_1")} (web)
-                    </span>{" "}
-                    {t("banner.block1_2")} - 0 ₸
-                  </>
-                )}
-              </BccTypography>
-            </Grid>
-            <Grid item>
-              <span>•</span>
-              <BccTypography type="p1">
                 {t("banner.block3")} - 0 ₸
               </BccTypography>
             </Grid>

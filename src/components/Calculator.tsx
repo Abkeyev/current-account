@@ -80,6 +80,9 @@ const useStyles = makeStyles((theme: Theme) =>
         "& > span:last-child": {
           float: "right",
         },
+        "& > span.total": {
+          float: "none",
+        },
         "& > span:first-child": {
           float: "none",
         },
@@ -98,9 +101,9 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const Calulator = (props: any) => {
   const classes = useStyles({});
-  const [sum, setSum] = React.useState(1500000);
+  const [sum, setSum] = React.useState(2500000);
   const [agree, setAgree] = React.useState(true);
-  const [period, setPeriod] = React.useState(24);
+  const [period, setPeriod] = React.useState(30);
   return (
     <div className={classes.calc}>
       <Grid
@@ -138,8 +141,8 @@ const Calulator = (props: any) => {
                   position: "absolute",
                 }}
                 min={0}
-                max={3000000}
-                step={1000}
+                max={30000000}
+                step={10000}
                 value={sum}
                 valueLabelDisplay="off"
                 defaultValue={sum}
@@ -149,7 +152,7 @@ const Calulator = (props: any) => {
               />
               <div className={classes.sliderRange}>
                 <span>0</span>
-                <span>3 000 000</span>
+                <span>30 000 000</span>
               </div>
             </div>
           </div>
@@ -158,15 +161,15 @@ const Calulator = (props: any) => {
               <BccInput
                 label="Выберите срок"
                 key="period"
-                value={period + " мес."}
+                value={period + " д."}
                 variant="filled"
                 InputLabelProps={{
                   shrink: true,
                 }}
                 onChange={(e: any) =>
-                  +e.target.value.slice(0, -5) > 48
+                  +e.target.value.slice(0, -3) > 48
                     ? setPeriod(48)
-                    : setPeriod(+e.target.value.slice(0, -5))
+                    : setPeriod(+e.target.value.slice(0, -3))
                 }
                 className={classes.input}
               />
@@ -216,8 +219,18 @@ const Calulator = (props: any) => {
               <BccTypography type="p4">
                 Итоговая сумма выплаты по лимиту:
               </BccTypography>
-              <BccTypography type="p4" weight="medium">
-                1 650 000 ₸
+              <BccTypography
+                block
+                align="right"
+                mt="6px"
+                type="p2"
+                weight="medium"
+                className="total"
+              >
+                {Math.trunc(sum + ((sum * 22) / 365) * period + sum * 0.5)
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
+                ₸
               </BccTypography>
             </Grid>
             <Grid item>

@@ -437,20 +437,69 @@ const Additional = (props: any) => {
       <BccTypography type="h2" block className={classes.title}>
         {t("lks.title")}
       </BccTypography>
-      <BccTabs
+      <BccToggleButtonGroup
         value={toggle}
-        onChange={(e: any, i: number) => {
-          setToggle(`${i}`);
+        exclusive
+        onChange={(e: any, next: any) => {
+          next && setToggle(next);
         }}
-        className={classes.tab}
+        className={classes.toggleGroup}
       >
-        <BccTab label={t(`lks.1`)} value="0" />;
-        <BccTab label={t(`lks.2`)} value="1" />;
-        <BccTab label={t(`lks.3`)} value="2" />;
-        <BccTab label={t(`lks.4`)} value="3" />;
-        <BccTab label={t(`lks.5`)} value="4" />;
-        <BccTab label={t(`lks.6`)} value="5" />;
-      </BccTabs>
+        <BccToggleButton value="0">
+          <BccTypography
+            className={classes.toggleText}
+            weight="medium"
+            type="p2"
+          >
+            {t(`lks.1`)}
+          </BccTypography>
+        </BccToggleButton>
+        <BccToggleButton value="1">
+          <BccTypography
+            className={classes.toggleText}
+            weight="medium"
+            type="p2"
+          >
+            {t(`lks.2`)}
+          </BccTypography>
+        </BccToggleButton>
+        <BccToggleButton value="2">
+          <BccTypography
+            className={classes.toggleText}
+            weight="medium"
+            type="p2"
+          >
+            {t(`lks.3`)}
+          </BccTypography>
+        </BccToggleButton>
+        <BccToggleButton value="3">
+          <BccTypography
+            className={classes.toggleText}
+            weight="medium"
+            type="p2"
+          >
+            {t(`lks.4`)}
+          </BccTypography>
+        </BccToggleButton>
+        <BccToggleButton value="4">
+          <BccTypography
+            className={classes.toggleText}
+            weight="medium"
+            type="p2"
+          >
+            {t(`lks.5`)}
+          </BccTypography>
+        </BccToggleButton>
+        <BccToggleButton value="5">
+          <BccTypography
+            className={classes.toggleText}
+            weight="medium"
+            type="p2"
+          >
+            {t(`lks.6`)}
+          </BccTypography>
+        </BccToggleButton>
+      </BccToggleButtonGroup>
       <div className={classes.tabsContent}>
         {toggle === "0" ? (
           <Grid container direction="row" justify="space-evenly">
@@ -548,7 +597,7 @@ const Additional = (props: any) => {
               </BccTypography>
             </Grid>
             <Grid item className={classes.item2}>
-              <img src={process.env.PUBLIC_URL + "/online.svg"} />
+              <img src={process.env.PUBLIC_URL + "/tenger.svg"} />
               <BccTypography type="p2" block className={classes.itemTitle}>
                 {t("lks.3text4")}
               </BccTypography>
