@@ -57,6 +57,9 @@ const useStyles = makeStyles((theme: Theme) =>
         marginBottom: 10,
         "& > span": {
           color: "#249052",
+          "& > a": {
+            color: "#249052",
+          },
         },
       },
       lastSetp: {
@@ -350,10 +353,8 @@ const Banner = (props: any) => {
               <Grid item className={classes.starBlock2}>
                 <BccTypography type="p2" className={classes.newText} block>
                   Если у Вас ИП, откроем счёт через интернет за 10 минут —
-                  понадобятся только удостоверение личности, ИИН и веб-камера.
-                </BccTypography>
-                <BccTypography type="h4" block className={classes.starBusiness}>
-                  StarBusiness
+                  понадобятся только удостоверение личности, ИИН, свидетельство
+                  ИП и веб-камера.
                 </BccTypography>
                 <BccTypography type="p2" block className={classes.starSteps}>
                   <span>•</span> {t("online.step1text1")}
@@ -403,13 +404,9 @@ const Banner = (props: any) => {
               className={classes.star}
             >
               <Grid item>
-                <img src={process.env.PUBLIC_URL + "/step2.png"} alt="Step2" />
-                <img src={process.env.PUBLIC_URL + "/step22.png"} alt="Step2" />
+                <img src={process.env.PUBLIC_URL + "/gif1.gif"} alt="Step2" />
               </Grid>
               <Grid item className={classes.starBlock2}>
-                <BccTypography type="h4" block className={classes.starBusiness}>
-                  {t("online.step2title")}
-                </BccTypography>
                 <BccTypography type="p2" block className={classes.starSteps}>
                   <span>•</span> {t("online.step2text0")}
                 </BccTypography>
@@ -470,7 +467,7 @@ const Banner = (props: any) => {
               className={classes.star}
             >
               <Grid item>
-                <img src={process.env.PUBLIC_URL + "/ip.gif"} alt="Step5" />
+                <img src={process.env.PUBLIC_URL + "/gif2.gif"} alt="Step5" />
               </Grid>
               <Grid item className={classes.starBlock2}>
                 <BccTypography type="p2" block className={classes.starSteps}>
@@ -525,9 +522,6 @@ const Banner = (props: any) => {
                   за 15 минут - понадобится пакет документов для открытия счета
                   и веб-камера.
                 </BccTypography>
-                <BccTypography type="h4" block className={classes.starBusiness}>
-                  StarBusiness
-                </BccTypography>
                 <BccTypography type="p2" block className={classes.starSteps}>
                   <span>•</span> {t("online.step1text1")}
                 </BccTypography>
@@ -576,13 +570,9 @@ const Banner = (props: any) => {
               className={classes.star}
             >
               <Grid item>
-                <img src={process.env.PUBLIC_URL + "/step2.png"} alt="Step2" />
-                <img src={process.env.PUBLIC_URL + "/step22.png"} alt="Step2" />
+                <img src={process.env.PUBLIC_URL + "/gif1.gif"} alt="Step2" />
               </Grid>
               <Grid item className={classes.starBlock2}>
-                <BccTypography type="h4" block className={classes.starBusiness}>
-                  {t("online.step2title")}
-                </BccTypography>
                 <BccTypography type="p2" block className={classes.starSteps}>
                   <span>•</span> {t("online.step2text1")}{" "}
                   <BccLink target="_blank" href="#">
@@ -640,7 +630,7 @@ const Banner = (props: any) => {
               className={classes.star}
             >
               <Grid item>
-                <img src={process.env.PUBLIC_URL + "/ul.gif"} alt="Step5" />
+                <img src={process.env.PUBLIC_URL + "/gif2.gif"} alt="Step5" />
               </Grid>
               <Grid item className={classes.starBlock2}>
                 <BccTypography type="p2" block className={classes.starSteps}>

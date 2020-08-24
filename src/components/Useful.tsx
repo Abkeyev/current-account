@@ -146,11 +146,6 @@ const items = [
     url: "https://www.bcc.kz/product/system-internet-banking_yur/",
   },
   {
-    img: "/u3.svg",
-    content: [[0, 1, 2], 2, 3, 4, 5, 6],
-    url: "https://www.bcc.kz/product/overdraft/",
-  },
-  {
     img: "/u4.svg",
     content: [1, 2, 3, 4, 5, 6],
     url: "https://www.bcc.kz/product/tender-guarantees/",

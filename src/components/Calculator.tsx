@@ -183,7 +183,7 @@ const Calulator = (props: any) => {
                   position: "absolute",
                 }}
                 min={0}
-                max={48}
+                max={30}
                 step={1}
                 value={period}
                 valueLabelDisplay="off"
@@ -194,7 +194,7 @@ const Calulator = (props: any) => {
               />
               <div className={classes.sliderRange}>
                 <span>0</span>
-                <span>48</span>
+                <span>30</span>
               </div>
             </div>
           </div>
@@ -227,9 +227,9 @@ const Calulator = (props: any) => {
                 weight="medium"
                 className="total"
               >
-                {Math.trunc(sum + ((sum * 22) / 365) * period + sum * 0.5)
+                {Math.round(sum + ((sum * 0.22) / 365) * period + sum * 0.005)
                   .toString()
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}
                 ₸
               </BccTypography>
             </Grid>

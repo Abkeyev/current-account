@@ -8,4 +8,5 @@ export { default as Useful } from "./Useful";
 export { default as Sale } from "./Sale";
 export { default as CallUs } from "./CallUs";
 export { default as Calculator } from "./Calculator";
+export { default as Documents } from "./Documents";
 export { default as Footer } from "./Footer";

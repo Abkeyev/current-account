@@ -8,6 +8,7 @@ import {
   Useful,
   Footer,
   Additional,
+  Documents,
 } from "./components";
 import "./App.css";
 import { useTranslation } from "react-i18next";
@@ -38,6 +39,7 @@ function App() {
       <Online refProp={orderRef} />
       <Benefits />
       <Additional />
+      <Documents />
       <Useful />
       <CallUs />
       <Footer />

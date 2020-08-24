@@ -9,10 +9,6 @@ const useStyles = makeStyles((theme: Theme) =>
       fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
       fontSize: 18,
       lineHeight: "24px",
-      "& a": {
-        color: "inherit",
-        textDecoration: "inherit",
-      },
     },
     p1: {
       fontSize: 18,

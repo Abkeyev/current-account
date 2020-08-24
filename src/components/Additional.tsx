@@ -472,15 +472,6 @@ const Additional = (props: any) => {
             {t(`lks.4`)}
           </BccTypography>
         </BccToggleButton>
-        <BccToggleButton value="4">
-          <BccTypography
-            className={classes.toggleText}
-            weight="medium"
-            type="p2"
-          >
-            {t(`lks.5`)}
-          </BccTypography>
-        </BccToggleButton>
         <BccToggleButton value="5">
           <BccTypography
             className={classes.toggleText}
@@ -555,55 +546,6 @@ const Additional = (props: any) => {
         ) : toggle === "3" ? (
           <Grid container>
             <Calculator />
-          </Grid>
-        ) : toggle === "4" ? (
-          <Grid container justify="space-between" className={classes.docs}>
-            <Grid item>
-              <img src={process.env.PUBLIC_URL + "/pdf.svg"} />
-              <BccLink
-                target="_blank"
-                href="https://docs.google.com/document/d/1e1dV5eJsHGwK1g55nVI39Is51ONRJ3pd45GMk1KQLwQ/edit"
-              >
-                Для индивидуальных предпринимателей, лиц, занимающихся частной
-                практикой
-              </BccLink>
-            </Grid>
-            <Grid item>
-              <img src={process.env.PUBLIC_URL + "/pdf.svg"} />
-              <BccLink
-                target="_blank"
-                href="https://docs.google.com/document/d/1e1dV5eJsHGwK1g55nVI39Is51ONRJ3pd45GMk1KQLwQ/edit"
-              >
-                Для юридических лиц
-              </BccLink>
-            </Grid>
-            <Grid item>
-              <img src={process.env.PUBLIC_URL + "/pdf.svg"} />
-              <BccLink
-                target="_blank"
-                href="https://docs.google.com/document/d/1e1dV5eJsHGwK1g55nVI39Is51ONRJ3pd45GMk1KQLwQ/edit"
-              >
-                Для филиалов и представительств юридических лиц-резидентов
-              </BccLink>
-            </Grid>
-            <Grid item>
-              <img src={process.env.PUBLIC_URL + "/pdf.svg"} />
-              <BccLink
-                target="_blank"
-                href="https://docs.google.com/document/d/1e1dV5eJsHGwK1g55nVI39Is51ONRJ3pd45GMk1KQLwQ/edit"
-              >
-                Для юридических лиц-нерезидентов
-              </BccLink>
-            </Grid>
-            <Grid item>
-              <img src={process.env.PUBLIC_URL + "/pdf.svg"} />
-              <BccLink
-                target="_blank"
-                href="https://docs.google.com/document/d/1e1dV5eJsHGwK1g55nVI39Is51ONRJ3pd45GMk1KQLwQ/edit"
-              >
-                Для филиалов и представительств юридических лиц-нерезидентов
-              </BccLink>
-            </Grid>
           </Grid>
         ) : toggle === "5" ? (
           <BccTableContainer>
