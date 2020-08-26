@@ -454,6 +454,15 @@ const Additional = (props: any) => {
             {t(`lks.1`)}
           </BccTypography>
         </BccToggleButton>
+        <BccToggleButton value="1">
+          <BccTypography
+            className={classes.toggleText}
+            weight="medium"
+            type="p2"
+          >
+            {t(`lks.2`)}
+          </BccTypography>
+        </BccToggleButton>
         <BccToggleButton value="2">
           <BccTypography
             className={classes.toggleText}
@@ -515,6 +524,48 @@ const Additional = (props: any) => {
                 {t("lks.1text5")}
               </BccTypography>
             </Grid>
+          </Grid>
+        ) : toggle === "1" ? (
+          <Grid container direction="row" justify="space-between">
+            <Grid item className={classes.item3}>
+              <img src={process.env.PUBLIC_URL + "/icons/loan-tenge.svg"} />
+              <BccTypography type="p2" block className={classes.itemTitle}>
+                {t("lks.2text1")}
+              </BccTypography>
+            </Grid>
+            <Grid item className={classes.item3}>
+              <img src={process.env.PUBLIC_URL + "/tenge.svg"} />
+              <BccTypography type="p2" block className={classes.itemTitle}>
+                {t("lks.2text2")}
+              </BccTypography>
+            </Grid>
+            <Grid item className={classes.item3}>
+              <img src={process.env.PUBLIC_URL + "/limitt.svg"} />
+              <BccTypography type="p2" block className={classes.itemTitle}>
+                {t("lks.2text3")}
+              </BccTypography>
+            </Grid>
+            <Grid item className={classes.item3}>
+              <img src={process.env.PUBLIC_URL + "/icons/bag.svg"} />
+              <BccTypography type="p2" block className={classes.itemTitle}>
+                {t("lks.2text4")}
+              </BccTypography>
+            </Grid>
+            <Grid item className={classes.item3}>
+              <img src={process.env.PUBLIC_URL + "/icons/period.svg"} />
+              <BccTypography type="p2" block className={classes.itemTitle}>
+                {t("lks.2text5")}
+              </BccTypography>
+            </Grid>
+            <Grid item className={classes.item3}>
+              <img src={process.env.PUBLIC_URL + "/icons/period.svg"} />
+              <BccTypography type="p2" block className={classes.itemTitle}>
+                {t("lks.2text6")}
+              </BccTypography>
+            </Grid>
+            <BccTypography type="p3" block className={classes.hintTitle}>
+              {t("lks.2text7")}
+            </BccTypography>
           </Grid>
         ) : toggle === "2" ? (
           <Grid container direction="row" justify="space-between">
