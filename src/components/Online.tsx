@@ -574,6 +574,9 @@ const Banner = (props: any) => {
               </Grid>
               <Grid item className={classes.starBlock2}>
                 <BccTypography type="p2" block className={classes.starSteps}>
+                  <span>•</span> {t("online.step2text0")}
+                </BccTypography>
+                <BccTypography type="p2" block className={classes.starSteps}>
                   <span>•</span> {t("online.step2text1")}{" "}
                   <BccLink target="_blank" href="#">
                     {t("online.step2text1_2")}
