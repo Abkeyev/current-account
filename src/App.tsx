@@ -39,7 +39,7 @@ function App() {
       <Online refProp={orderRef} />
       <Benefits />
       <Additional />
-      <Documents />
+      <Documents lang={lang} />
       <Useful />
       <CallUs />
       <Footer />

@@ -228,7 +228,13 @@ const Documents = (props: any) => {
             <img src={process.env.PUBLIC_URL + "/icons/pdf.svg"} />
             <BccLink
               target="_blank"
-              href="https://docs.google.com/document/d/1e1dV5eJsHGwK1g55nVI39Is51ONRJ3pd45GMk1KQLwQ/edit"
+              href={
+                props.lang === "ru"
+                  ? "https://www.bcc.kz/rus_1.pdf"
+                  : props.lang === "en"
+                  ? "https://www.bcc.kz/eng_1.pdf"
+                  : "https://www.bcc.kz/kaz_1.pdf"
+              }
             >
               Для индивидуальных предпринимателей, лиц, занимающихся частной
               практикой
@@ -238,7 +244,13 @@ const Documents = (props: any) => {
             <img src={process.env.PUBLIC_URL + "/icons/pdf.svg"} />
             <BccLink
               target="_blank"
-              href="https://docs.google.com/document/d/1e1dV5eJsHGwK1g55nVI39Is51ONRJ3pd45GMk1KQLwQ/edit"
+              href={
+                props.lang === "ru"
+                  ? "https://www.bcc.kz/rus_2.pdf"
+                  : props.lang === "en"
+                  ? "https://www.bcc.kz/eng_2.pdf"
+                  : "https://www.bcc.kz/kaz_2.pdf"
+              }
             >
               Для юридических лиц
             </BccLink>
@@ -247,7 +259,13 @@ const Documents = (props: any) => {
             <img src={process.env.PUBLIC_URL + "/icons/pdf.svg"} />
             <BccLink
               target="_blank"
-              href="https://docs.google.com/document/d/1e1dV5eJsHGwK1g55nVI39Is51ONRJ3pd45GMk1KQLwQ/edit"
+              href={
+                props.lang === "ru"
+                  ? "https://www.bcc.kz/rus_3.pdf"
+                  : props.lang === "en"
+                  ? "https://www.bcc.kz/eng_3.pdf"
+                  : "https://www.bcc.kz/kaz_3.pdf"
+              }
             >
               Для филиалов и представительств юридических лиц-резидентов
             </BccLink>
@@ -256,7 +274,13 @@ const Documents = (props: any) => {
             <img src={process.env.PUBLIC_URL + "/icons/pdf.svg"} />
             <BccLink
               target="_blank"
-              href="https://docs.google.com/document/d/1e1dV5eJsHGwK1g55nVI39Is51ONRJ3pd45GMk1KQLwQ/edit"
+              href={
+                props.lang === "ru"
+                  ? "https://www.bcc.kz/rus_4.pdf"
+                  : props.lang === "en"
+                  ? "https://www.bcc.kz/eng_4.pdf"
+                  : "https://www.bcc.kz/kaz_4.pdf"
+              }
             >
               Для юридических лиц-нерезидентов
             </BccLink>
@@ -265,7 +289,13 @@ const Documents = (props: any) => {
             <img src={process.env.PUBLIC_URL + "/icons/pdf.svg"} />
             <BccLink
               target="_blank"
-              href="https://docs.google.com/document/d/1e1dV5eJsHGwK1g55nVI39Is51ONRJ3pd45GMk1KQLwQ/edit"
+              href={
+                props.lang === "ru"
+                  ? "https://www.bcc.kz/rus_5.pdf"
+                  : props.lang === "en"
+                  ? "https://www.bcc.kz/eng_5.pdf"
+                  : "https://www.bcc.kz/kaz_5.pdf"
+              }
             >
               Для филиалов и представительств юридических лиц-нерезидентов
             </BccLink>
