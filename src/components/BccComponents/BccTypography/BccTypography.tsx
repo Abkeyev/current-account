@@ -8,7 +8,6 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "inline-block",
       fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
       fontSize: 18,
-      color: "#141414",
       lineHeight: "24px",
     },
     p1: {
@@ -34,8 +33,11 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
       display: "inline-block",
       fontWeight: 500,
-      color: "#141414",
       lineHeight: "52px",
+      "& a": {
+        color: "inherit",
+        textDecoration: "inherit",
+      },
     },
     h1: {
       fontSize: 48,
@@ -78,7 +80,14 @@ const useStyles = makeStyles((theme: Theme) =>
 interface BccTypographyProps extends React.HTMLAttributes<HTMLDivElement> {
   children: any;
   weight?: "normal" | "medium" | "bold";
+  color?: string;
+  align?: "center" | "left" | "right" | "justify";
   block?: boolean;
+  mt?: string | "0";
+  mr?: string | "0";
+  mb?: string | "0";
+  ml?: string | "0";
+  td?: "underline" | "";
   type:
     | "h1"
     | "h2"
@@ -96,7 +105,20 @@ interface BccTypographyProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const BccTypography = (props: BccTypographyProps) => {
   const classes = useStyles();
-  const { type, weight, block, children } = props;
+  const {
+    type,
+    weight,
+    color,
+    align,
+    block,
+    td,
+    mt,
+    mr,
+    mb,
+    ml,
+    className,
+    children,
+  } = props;
   return (
     <span
       className={`${
@@ -131,9 +153,16 @@ const BccTypography = (props: BccTypographyProps) => {
           : weight === "normal"
           ? classes.normal
           : ""
-      } ${block ? classes.block : ""} ${
-        props.className ? props.className : ""
-      } `}
+      } ${block ? classes.block : ""} ${className ? className : ""} `}
+      style={{
+        marginTop: mt,
+        marginRight: mr,
+        marginBottom: mb,
+        marginLeft: ml,
+        color: color,
+        textAlign: align,
+        textDecoration: td,
+      }}
     >
       {children}
     </span>

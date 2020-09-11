@@ -14,7 +14,6 @@ import {
   BccTabs,
   BccTab,
 } from "./BccComponents";
-import { Calculator } from "./";
 
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { useTranslation } from "react-i18next";
