@@ -6,6 +6,7 @@ import {
   CallUs,
   Sale,
   Useful,
+  Documents,
   Footer,
 } from "./components";
 import "./App.css";
@@ -37,6 +38,7 @@ function App() {
       <Sale lang={lang} />
       <Online refProp={orderRef} />
       <Benefits />
+      <Documents lang={lang} />
       <Useful />
       <CallUs />
       <Footer />

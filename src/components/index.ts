@@ -2,6 +2,7 @@ export { default as Loading } from "./Loading";
 export { default as Banner } from "./Banner";
 export { default as Online } from "./Online";
 export { default as Benefits } from "./Benefits";
+export { default as Documents } from "./Documents";
 export { default as Order } from "./Order";
 export { default as Additional } from "./Additional";
 export { default as Useful } from "./Useful";
