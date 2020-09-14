@@ -603,14 +603,14 @@ const Additional = (props: any) => {
             <BccTable aria-label="simple table">
               <BccTableHead>
                 <BccTableRow>
-                  <BccTableCell>Название тарифа</BccTableCell>
-                  <BccTableCell>Ценовые параметры</BccTableCell>
-                  <BccTableCell>Порядок начисления и оплаты</BccTableCell>
+                  <BccTableCell>{t("lks.6text1")}</BccTableCell>
+                  <BccTableCell>{t("lks.6text2")}</BccTableCell>
+                  <BccTableCell>{t("lks.6text3")}</BccTableCell>
                 </BccTableRow>
               </BccTableHead>
               <BccTableBody className={classes.table}>
                 <BccTableRow>
-                  <BccTableCell>Ставка вознаграждения</BccTableCell>
+                  <BccTableCell>{t("lks.6text4")}</BccTableCell>
                   <BccTableCell>
                     <BccTableRow>
                       <BccTableCell>22%</BccTableCell>
@@ -618,36 +618,24 @@ const Additional = (props: any) => {
                   </BccTableCell>
                   <BccTableCell>
                     <BccTableRow>
-                      <BccTableCell>годовых</BccTableCell>
+                      <BccTableCell>{t("lks.6text5")}</BccTableCell>
                     </BccTableRow>
                   </BccTableCell>
                 </BccTableRow>
                 <BccTableRow>
-                  <BccTableCell>
-                    Ежемесячная комиссия за управление лимитом
-                  </BccTableCell>
+                  <BccTableCell>{t("lks.6text6")}</BccTableCell>
                   <BccTableCell>0,5%</BccTableCell>
-                  <BccTableCell>
-                    От максимальной суммы выборки (освоения) лимита за прошлый
-                    месяц
-                  </BccTableCell>
+                  <BccTableCell>{t("lks.6text7")}</BccTableCell>
                 </BccTableRow>
                 <BccTableRow>
-                  <BccTableCell>
-                    Комиссия за снятие заемных средств или перевод заемных
-                    средств на счета Клиента, открытые в АО “Банке ЦентрКредит”
-                    или в других БВУ
-                  </BccTableCell>
+                  <BccTableCell>{t("lks.6text8")}</BccTableCell>
                   <BccTableCell>1%</BccTableCell>
-                  <BccTableCell>(минимум 2 000 тг.)</BccTableCell>
+                  <BccTableCell>({t("lks.6min")} 2 000 ₸)</BccTableCell>
                 </BccTableRow>
                 <BccTableRow>
-                  <BccTableCell>Пени</BccTableCell>
+                  <BccTableCell>{t("lks.6text10")}</BccTableCell>
                   <BccTableCell>0,2%</BccTableCell>
-                  <BccTableCell>
-                    Начисляется на просроченную задолженность по продукту
-                    “Кредитный лимит на счёт” за каждый день просрочки
-                  </BccTableCell>
+                  <BccTableCell>{t("lks.6text11")}</BccTableCell>
                 </BccTableRow>
               </BccTableBody>
             </BccTable>

@@ -10,6 +10,7 @@ import {
   BccButton,
   BccCheckbox,
 } from "./BccComponents";
+import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -104,6 +105,7 @@ const Calulator = (props: any) => {
   const [sum, setSum] = React.useState(2500000);
   const [agree, setAgree] = React.useState(true);
   const [period, setPeriod] = React.useState(30);
+  const { t } = useTranslation();
   return (
     <div className={classes.calc}>
       <Grid
@@ -117,7 +119,7 @@ const Calulator = (props: any) => {
           <div className={classes.paymentWrap}>
             <div className={classes.sliderWrap}>
               <BccInput
-                label="Выберите сумму"
+                label={t("lks.4sum")}
                 key="sum"
                 value={sum + " ₸"}
                 variant="filled"
@@ -159,7 +161,7 @@ const Calulator = (props: any) => {
           <div className={classes.paymentWrap}>
             <div className={classes.sliderWrap}>
               <BccInput
-                label="Выберите срок"
+                label={t("lks.4period")}
                 key="period"
                 value={period + " д."}
                 variant="filled"
@@ -202,23 +204,19 @@ const Calulator = (props: any) => {
         <Grid item>
           <Grid container justify="space-between" className={classes.cardsText}>
             <Grid item>
-              <BccTypography type="p4">Процентная ставка:</BccTypography>
+              <BccTypography type="p4">{t("lks.4percent")}</BccTypography>
               <BccTypography type="p4" weight="medium">
                 22%
               </BccTypography>
             </Grid>
             <Grid item>
-              <BccTypography type="p4">
-                Комиссия за управление лимитом:
-              </BccTypography>
+              <BccTypography type="p4">{t("lks.4comission")}</BccTypography>
               <BccTypography type="p4" weight="medium">
                 0.5%
               </BccTypography>
             </Grid>
             <Grid item>
-              <BccTypography type="p4">
-                Итоговая сумма выплаты по лимиту:
-              </BccTypography>
+              <BccTypography type="p4">{t("lks.4total")}</BccTypography>
               <BccTypography
                 block
                 align="right"
@@ -235,7 +233,7 @@ const Calulator = (props: any) => {
             </Grid>
             <Grid item>
               <BccTypography type="p4" block>
-                *Данные предварительные
+                {t("lks.4other")}
               </BccTypography>
             </Grid>
           </Grid>

@@ -352,9 +352,7 @@ const Banner = (props: any) => {
               </Grid>
               <Grid item className={classes.starBlock2}>
                 <BccTypography type="p2" className={classes.newText} block>
-                  Если у Вас ИП, откроем счёт через интернет за 10 минут —
-                  понадобятся только удостоверение личности, ИИН, свидетельство
-                  ИП и веб-камера.
+                  {t("online.step1text0")}
                 </BccTypography>
                 <BccTypography type="p2" block className={classes.starSteps}>
                   <span>•</span> {t("online.step1text1")}
@@ -518,9 +516,7 @@ const Banner = (props: any) => {
               </Grid>
               <Grid item className={classes.starBlock2}>
                 <BccTypography type="p2" className={classes.newText} block>
-                  Если у Вас счет юридического лица, откроем счёт через интернет
-                  за 15 минут - понадобится пакет документов для открытия счета
-                  и веб-камера.
+                  {t("online.step1text01")}
                 </BccTypography>
                 <BccTypography type="p2" block className={classes.starSteps}>
                   <span>•</span> {t("online.step1text1")}
