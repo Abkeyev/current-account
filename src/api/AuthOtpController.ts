@@ -19,7 +19,6 @@ export class Token {
 
 export class AuthOtpController {
   async sendOtp(request?: OtpRequest): Promise<any> {
-    console.log("submit otp server");
     return await server.post(
       `/hotspot/sendOtp`,
       {

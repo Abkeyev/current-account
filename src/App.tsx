@@ -39,7 +39,7 @@ function App() {
       <Online />
       <Benefits />
       <Additional />
-      <Order refProp={orderRef} />
+      <Order scrollToOrder={scrollToOrderRef} refProp={orderRef} />
       <Documents lang={lang} />
       <Useful />
       <CallUs />

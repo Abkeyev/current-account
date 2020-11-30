@@ -346,7 +346,6 @@ const Order = (props: any) => {
       return (
         fio !== "" &&
         city !== "" &&
-        city !== "" &&
         iin.replace(/ /g, "").length === 12 &&
         phone.replace("_", "").length === 17 &&
         agree
@@ -370,36 +369,33 @@ const Order = (props: any) => {
 
   const startProcess = () => {
     api.camunda
-      .start({
-        env: {
-          production: webConfigEnv.PRODUCTION === "1",
-        },
-        ...new GrowingBusinessBaseModel(),
-        requestInfo: {
-          type,
-          fio: fio,
-          iin: iin,
-          phone: formatPhoneNumber(),
-          lang: i18n.language,
-          city: city,
-          utm_source: getUrlParameter("utm_source"),
-          utm_medium: getUrlParameter("utm_medium"),
-          utm_campaign: getUrlParameter("utm_campaign"),
-          utm_term: getUrlParameter("utm_term"),
-          utm_content: getUrlParameter("utm_content"),
-          utm_keyword: getUrlParameter("utm_keyword"),
-        },
-      })
-      .then((userContext) => {
-        setStep(2);
-        props.scrollToOrder(false);
-        setLoading(false);
-      })
-      .catch((e: any) => {
-        console.error(e);
-        setOpenError(true);
-        setLoading(false);
-      });
+    .start({
+      env: {
+        production: webConfigEnv.PRODUCTION === "1",
+      },
+      client: {
+        type: type === '0' ? 'ip' : 'ul',
+        fio: fio,
+        iin: iin,
+        forAccount: account,
+        phone: formatPhoneNumber(),
+        city: city,
+        utm_source: getUrlParameter("utm_source"),
+        utm_medium: getUrlParameter("utm_medium"),
+        utm_campaign: getUrlParameter("utm_campaign"),
+        utm_term: getUrlParameter("utm_term"),
+        utm_content: getUrlParameter("utm_content"),
+      },
+    })
+    .then((res: any) => {
+      setStep(2);
+      setLoading(false);
+    })
+    .catch((e: any) => {
+      console.error(e);
+      setOpenError(true);
+      setLoading(false);
+    });
   };
 
   const validate = () => {
@@ -427,6 +423,7 @@ const Order = (props: any) => {
 
   const getOtp = () => {
     if (!validate()) return;
+    console.log('val')
     setLoading(true);
     setTimer(90);
     api.authOtp
