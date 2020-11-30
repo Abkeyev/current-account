@@ -78,7 +78,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     [theme.breakpoints.between("md", "xl")]: {
       container: {
-        backgroundColor: "#fff",
+        backgroundColor: "#fafafa",
       },
       innerContainer: {
         maxWidth: 1280,

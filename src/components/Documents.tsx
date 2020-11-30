@@ -157,7 +157,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     [theme.breakpoints.between("md", "xl")]: {
       container: {
-        backgroundColor: "#FAFAFA",
+        backgroundColor: "#FFFFFF",
       },
       innerContainer: {
         maxWidth: 1280,
@@ -232,10 +232,10 @@ const Documents = (props: any) => {
               target="_blank"
               href={
                 props.lang === "ru"
-                  ? "https://www.bcc.kz/rus_2.pdf"
+                  ? "https://www.bcc.kz/rus_4.pdf"
                   : props.lang === "en"
-                  ? "https://www.bcc.kz/eng_2.pdf"
-                  : "https://www.bcc.kz/kaz_2.pdf"
+                  ? "https://www.bcc.kz/eng_4.pdf"
+                  : "https://www.bcc.kz/kaz_4.pdf"
               }
             >
               {t("lks.5text2")}
@@ -262,10 +262,10 @@ const Documents = (props: any) => {
               target="_blank"
               href={
                 props.lang === "ru"
-                  ? "https://www.bcc.kz/rus_4.pdf"
+                  ? "https://www.bcc.kz/rus_5.pdf"
                   : props.lang === "en"
-                  ? "https://www.bcc.kz/eng_4.pdf"
-                  : "https://www.bcc.kz/kaz_4.pdf"
+                  ? "https://www.bcc.kz/eng_5.pdf"
+                  : "https://www.bcc.kz/kaz_5.pdf"
               }
             >
               {t("lks.5text4")}
@@ -277,10 +277,10 @@ const Documents = (props: any) => {
               target="_blank"
               href={
                 props.lang === "ru"
-                  ? "https://www.bcc.kz/rus_5.pdf"
+                  ? "https://www.bcc.kz/rus_2.pdf"
                   : props.lang === "en"
-                  ? "https://www.bcc.kz/eng_5.pdf"
-                  : "https://www.bcc.kz/kaz_5.pdf"
+                  ? "https://www.bcc.kz/eng_2.pdf"
+                  : "https://www.bcc.kz/kaz_2.pdf"
               }
             >
               {t("lks.5text5")}

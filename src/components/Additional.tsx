@@ -512,13 +512,13 @@ const Additional = (props: any) => {
                 {t("lks.1text3")}
               </BccTypography>
             </Grid>
-            <Grid item className={classes.item3}>
+            <Grid item className={classes.item3} style={{ marginBottom: 0 }}>
               <img src={process.env.PUBLIC_URL + "/percentr.svg"} />
               <BccTypography type="p2" block className={classes.itemTitle}>
                 {t("lks.1text4")}
               </BccTypography>
             </Grid>
-            <Grid item className={classes.item3}>
+            <Grid item className={classes.item3} style={{ marginBottom: 0 }}>
               <img src={process.env.PUBLIC_URL + "/docr.svg"} />
               <BccTypography type="p2" block className={classes.itemTitle}>
                 {t("lks.1text5")}

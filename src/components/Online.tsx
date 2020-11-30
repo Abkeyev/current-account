@@ -266,13 +266,11 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const Banner = (props: any) => {
-  const steps1 = [1, 2, 3, 4, 5];
-  const steps2 = [1, 2, 3, 4, 5];
+const Banner = () => {
+  const steps1 = [1, 2, 3, 4, 5, 6];
   const classes = useStyles({});
   const [activeStep, setActiveStep] = React.useState(1);
   const [steps, setActiveSteps] = React.useState(steps1);
-  const [toggle, setToggle] = React.useState("ip");
   const { t } = useTranslation();
 
   const handleNext = () => {
@@ -334,7 +332,6 @@ const Banner = (props: any) => {
   };
 
   function getStepContent(stepIndex: number) {
-    if (toggle === "ip") {
       switch (stepIndex) {
         case 1:
           return (
@@ -469,10 +466,7 @@ const Banner = (props: any) => {
               </Grid>
               <Grid item className={classes.starBlock2}>
                 <BccTypography type="p2" block className={classes.starSteps}>
-                  <span>•</span> {t("online.step4text1")}
-                </BccTypography>
-                <BccTypography type="p2" block className={classes.starSteps}>
-                  <span>•</span> {t("online.step4text2")}
+                  {t("online.step4text1")}
                 </BccTypography>
               </Grid>
             </Grid>
@@ -486,21 +480,16 @@ const Banner = (props: any) => {
               className={classes.star}
             >
               <Grid item>
-                <img src={process.env.PUBLIC_URL + "/step5.png"} alt="Step5" />
+                <img src={process.env.PUBLIC_URL + "/meet.png"} alt="Step5" />
               </Grid>
               <Grid item className={classes.starBlock2}>
                 <BccTypography type="p2" block className={classes.starSteps}>
-                  <span>•</span> {t("online.step5text1")}
+                  {t("online.step6text1")}
                 </BccTypography>
               </Grid>
             </Grid>
           );
-        default:
-          return "Ошибка";
-      }
-    } else {
-      switch (stepIndex) {
-        case 1:
+        case 6:
           return (
             <Grid
               container
@@ -509,164 +498,24 @@ const Banner = (props: any) => {
               className={classes.star}
             >
               <Grid item>
-                <img
-                  src={process.env.PUBLIC_URL + "/step111.png"}
-                  alt="StarBusiness"
-                />
-              </Grid>
-              <Grid item className={classes.starBlock2}>
-                <BccTypography type="p2" className={classes.newText} block>
-                  {t("online.step1text01")}
-                </BccTypography>
-                <BccTypography type="p2" block className={classes.starSteps}>
-                  <span>•</span> {t("online.step1text1")}
-                </BccTypography>
-                <BccTypography
-                  type="p2"
-                  block
-                  className={`${classes.starSteps} ${classes.lastSetp}`}
-                >
-                  <span>•</span> {t("online.step1text2")}
-                </BccTypography>
-
-                <Grid
-                  container
-                  justify="flex-start"
-                  direction="row"
-                  wrap="nowrap"
-                  className={classes.lOut}
-                >
-                  <Grid item className={classes.mobileLinks}>
-                    <span
-                      className={classes.link}
-                      onClick={(e: any) => onClickAS(e, false)}
-                    >
-                      <img src={process.env.PUBLIC_URL + "/as.svg"} />
-                    </span>
-                    <span
-                      className={classes.link}
-                      onClick={(e: any) => onClickGP(e, false)}
-                    >
-                      <img src={process.env.PUBLIC_URL + "/gp.svg"} />
-                    </span>
-                  </Grid>
-                  <Grid item className={classes.qr}>
-                    <img src={process.env.PUBLIC_URL + "/qrul.svg"} />
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Grid>
-          );
-        case 2:
-          return (
-            <Grid
-              container
-              direction="row"
-              justify="space-between"
-              className={classes.star}
-            >
-              <Grid item>
-                <img src={process.env.PUBLIC_URL + "/gif1.gif"} alt="Step2" />
+                <img src={process.env.PUBLIC_URL + "/finish.png"} alt="Step5" />
               </Grid>
               <Grid item className={classes.starBlock2}>
                 <BccTypography type="p2" block className={classes.starSteps}>
-                  <span>•</span> {t("online.step2text0")}
+                  {t("online.step6text1")}
                 </BccTypography>
                 <BccTypography type="p2" block className={classes.starSteps}>
-                  <span>•</span> {t("online.step2text1")}{" "}
-                  <BccLink target="_blank" href="#">
-                    {t("online.step2text1_2")}
-                  </BccLink>
-                </BccTypography>
-                <BccTypography
-                  type="p2"
-                  block
-                  className={`${classes.starSteps}`}
-                >
-                  <span>•</span> {t("online.step2text2")}
-                </BccTypography>
-                <BccTypography
-                  type="p2"
-                  block
-                  className={`${classes.starSteps}`}
-                >
-                  <span>•</span> {t("online.step2text3")}
-                </BccTypography>
-                <BccTypography
-                  type="p2"
-                  block
-                  className={`${classes.starSteps} ${classes.lastSetp}`}
-                >
-                  <span>•</span> {t("online.step2text4")}
+                  {t("online.step6text2")}
                 </BccTypography>
               </Grid>
             </Grid>
           );
-        case 3:
-          return (
-            <Grid
-              container
-              direction="row"
-              justify="space-between"
-              className={classes.star}
-            >
-              <Grid item>
-                <img src={process.env.PUBLIC_URL + "/step3.png"} alt="Step3" />
-              </Grid>
-              <Grid item className={classes.starBlock2}>
-                <BccTypography type="p2" block className={classes.starSteps}>
-                  <span>•</span> {t("online.step3text1")}
-                </BccTypography>
-              </Grid>
-            </Grid>
-          );
-        case 4:
-          return (
-            <Grid
-              container
-              direction="row"
-              justify="space-between"
-              className={classes.star}
-            >
-              <Grid item>
-                <img src={process.env.PUBLIC_URL + "/gif2.gif"} alt="Step5" />
-              </Grid>
-              <Grid item className={classes.starBlock2}>
-                <BccTypography type="p2" block className={classes.starSteps}>
-                  <span>•</span> {t("online.step4text1")}
-                </BccTypography>
-                <BccTypography type="p2" block className={classes.starSteps}>
-                  <span>•</span> {t("online.step4text2")}
-                </BccTypography>
-              </Grid>
-            </Grid>
-          );
-        case 5:
-          return (
-            <Grid
-              container
-              direction="row"
-              justify="space-between"
-              className={classes.star}
-            >
-              <Grid item>
-                <img src={process.env.PUBLIC_URL + "/step5.png"} alt="Step5" />
-              </Grid>
-              <Grid item className={classes.starBlock2}>
-                <BccTypography type="p2" block className={classes.starSteps}>
-                  <span>•</span> {t("online.step5text1")}
-                </BccTypography>
-              </Grid>
-            </Grid>
-          );
-        default:
-          return "Ошибка";
-      }
+        default: return "Ошибка"
     }
   }
 
   return (
-    <div className={classes.container} ref={props.refProp}>
+    <div className={classes.container}>
       <BccTypography type="h2" block className={classes.title}>
         {t("online.title")}
       </BccTypography>
@@ -678,35 +527,6 @@ const Banner = (props: any) => {
       >
         {t("online.subtitle")}
       </BccTypography>
-      <BccToggleButtonGroup
-        value={toggle}
-        exclusive
-        onChange={(e: any, next: any) => {
-          setActiveSteps(steps.length === steps1.length ? steps2 : steps1);
-          setActiveStep(1);
-          next && setToggle(next);
-        }}
-        className={classes.toggleGroup}
-      >
-        <BccToggleButton value="ip">
-          <BccTypography
-            className={classes.toggleText}
-            weight="medium"
-            type="p2"
-          >
-            {t("online.toggleOne")}
-          </BccTypography>
-        </BccToggleButton>
-        <BccToggleButton value="ul">
-          <BccTypography
-            className={classes.toggleText}
-            weight="medium"
-            type="p2"
-          >
-            {t("online.toggleTwo")}
-          </BccTypography>
-        </BccToggleButton>
-      </BccToggleButtonGroup>
       <BccStepper activeStep={activeStep} className={classes.stepper}>
         {steps.map((label) => (
           <BccStep key={`step${label}`}>

@@ -4,7 +4,7 @@ import {
   Online,
   Benefits,
   CallUs,
-  Sale,
+  Order,
   Useful,
   Footer,
   Additional,
@@ -36,9 +36,10 @@ function App() {
         lang={lang}
         changeLang={handleLangChange}
       />
-      <Online refProp={orderRef} />
+      <Online />
       <Benefits />
       <Additional />
+      <Order refProp={orderRef} />
       <Documents lang={lang} />
       <Useful />
       <CallUs />
