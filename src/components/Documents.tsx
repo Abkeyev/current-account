@@ -1,20 +1,6 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
-import {
-  BccTypography,
-  BccToggleButton,
-  BccToggleButtonGroup,
-  BccLink,
-  BccTable,
-  BccTableContainer,
-  BccTableCell,
-  BccTableHead,
-  BccTableRow,
-  BccTableBody,
-  BccTabs,
-  BccTab,
-} from "./BccComponents";
-
+import { BccTypography, BccLink } from "./BccComponents";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { useTranslation } from "react-i18next";
 
@@ -220,7 +206,7 @@ const Documents = (props: any) => {
     <div className={classes.container}>
       <div className={classes.innerContainer}>
         <BccTypography type="h2" block className={classes.title}>
-          Перечень документов для открытия текущего счета:
+          {t("lks.5")}
         </BccTypography>
         <Grid container justify="space-between" className={classes.docs}>
           <Grid item>
@@ -235,38 +221,7 @@ const Documents = (props: any) => {
                   : "https://www.bcc.kz/kaz_1.pdf"
               }
             >
-              Для индивидуальных предпринимателей, лиц, занимающихся частной
-              практикой
-            </BccLink>
-          </Grid>
-          <Grid item>
-            <img src={process.env.PUBLIC_URL + "/icons/pdf.svg"} />
-            <BccLink
-              target="_blank"
-              href={
-                props.lang === "ru"
-                  ? "https://www.bcc.kz/rus_2.pdf"
-                  : props.lang === "en"
-                  ? "https://www.bcc.kz/eng_2.pdf"
-                  : "https://www.bcc.kz/kaz_2.pdf"
-              }
-            >
-              Для юридических лиц
-            </BccLink>
-          </Grid>
-          <Grid item>
-            <img src={process.env.PUBLIC_URL + "/icons/pdf.svg"} />
-            <BccLink
-              target="_blank"
-              href={
-                props.lang === "ru"
-                  ? "https://www.bcc.kz/rus_3.pdf"
-                  : props.lang === "en"
-                  ? "https://www.bcc.kz/eng_3.pdf"
-                  : "https://www.bcc.kz/kaz_3.pdf"
-              }
-            >
-              Для филиалов и представительств юридических лиц-резидентов
+              {t("lks.5text1")}
             </BccLink>
           </Grid>
           <Grid item>
@@ -281,7 +236,22 @@ const Documents = (props: any) => {
                   : "https://www.bcc.kz/kaz_4.pdf"
               }
             >
-              Для юридических лиц-нерезидентов
+              {t("lks.5text2")}
+            </BccLink>
+          </Grid>
+          <Grid item>
+            <img src={process.env.PUBLIC_URL + "/icons/pdf.svg"} />
+            <BccLink
+              target="_blank"
+              href={
+                props.lang === "ru"
+                  ? "https://www.bcc.kz/rus_3.pdf"
+                  : props.lang === "en"
+                  ? "https://www.bcc.kz/eng_3.pdf"
+                  : "https://www.bcc.kz/kaz_3.pdf"
+              }
+            >
+              {t("lks.5text3")}
             </BccLink>
           </Grid>
           <Grid item>
@@ -296,7 +266,22 @@ const Documents = (props: any) => {
                   : "https://www.bcc.kz/kaz_5.pdf"
               }
             >
-              Для филиалов и представительств юридических лиц-нерезидентов
+              {t("lks.5text4")}
+            </BccLink>
+          </Grid>
+          <Grid item>
+            <img src={process.env.PUBLIC_URL + "/icons/pdf.svg"} />
+            <BccLink
+              target="_blank"
+              href={
+                props.lang === "ru"
+                  ? "https://www.bcc.kz/rus_2.pdf"
+                  : props.lang === "en"
+                  ? "https://www.bcc.kz/eng_2.pdf"
+                  : "https://www.bcc.kz/kaz_2.pdf"
+              }
+            >
+              {t("lks.5text5")}
             </BccLink>
           </Grid>
         </Grid>

@@ -238,7 +238,7 @@ const Footer = (props: any) => {
           <Grid item className={classes.footerOne}>
             <Grid container direction="column">
               <Grid item className={classes.footItem}>
-                <Grid container>
+                <Grid container wrap="nowrap">
                   <Grid item>
                     <img
                       className={classes.footIcon}
@@ -253,7 +253,7 @@ const Footer = (props: any) => {
                 </Grid>
               </Grid>
               <Grid item className={classes.footItem}>
-                <Grid container>
+                <Grid container wrap="nowrap">
                   <Grid item>
                     <img
                       className={classes.footIcon}
@@ -268,7 +268,7 @@ const Footer = (props: any) => {
                 </Grid>
               </Grid>
               <Grid item>
-                <Grid container>
+                <Grid container wrap="nowrap">
                   <Grid item>
                     <img
                       className={classes.footIcon}
