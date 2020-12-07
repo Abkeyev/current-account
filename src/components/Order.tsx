@@ -10,6 +10,7 @@ import {
   BccFormControl,
   BccFormControlLabel,
   BccLink,
+  BccSwitch
 } from "./BccComponents";
 import api from "../api/Api";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
@@ -95,6 +96,13 @@ const useStyles = makeStyles((theme: Theme) =>
         marginBottom: 30,
         textAlign: "left",
       },
+      switchText: {
+        marginBottom: 30,
+        marginTop: 0,
+        padding: '0 8px',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+      },
       checkboxText: {
         alignItems: "flex-start",
         marginBottom: 20,
@@ -166,6 +174,13 @@ const useStyles = makeStyles((theme: Theme) =>
           marginLeft: 20,
           textAlign: "left",
         },
+      },
+      switchText: {
+        marginBottom: 30,
+        marginTop: 0,
+        padding: '0 8px',
+        alignItems: 'center',
+        justifyContent: 'space-between'
       },
       btnWrap: {
         width: "calc(50% - 10px)",
@@ -322,7 +337,7 @@ const Order = (props: any) => {
   const [iinError, setIinError] = React.useState<boolean>(false);
   const [openError, setOpenError] = React.useState(false);
   const [agree, setAgree] = React.useState<boolean>(true);
-  const [account, setAccount] = React.useState<boolean>(false);
+  const [account, setAccount] = React.useState<boolean>(true);
   const [code, setCode] = React.useState("");
   const [timer, setTimer] = React.useState(0);
 
@@ -648,20 +663,18 @@ const Order = (props: any) => {
                       container
                       justify="flex-start"
                       wrap="nowrap"
-                      className={classes.checkboxText}
+                      className={classes.switchText}
                     >
-                      <Grid item>
-                        <BccCheckbox
-                          value="remember"
-                          color="primary"
-                          checked={account}
-                          onChange={() => setAccount(!account)}
-                        />
-                      </Grid>
                       <Grid item>
                         <BccTypography type="p3">
                         {t('order.account')}
                         </BccTypography>
+                      </Grid>
+                      <Grid item>
+                        <BccSwitch
+                          checked={account}
+                          onChange={() => setAccount(!account)}
+                        />
                       </Grid>
                     </Grid>
                   </Grid>

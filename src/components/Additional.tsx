@@ -29,6 +29,8 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       title: {
         marginBottom: 30,
+        fontSize: 24,
+        lineHeight: '28px'
       },
       subitle: {
         marginBottom: 30,
@@ -116,24 +118,28 @@ const useStyles = makeStyles((theme: Theme) =>
       toggleGroup: {
         width: "100%",
         display: "flex",
-        flexWrap: "nowrap",
-        border: "1px solid #27AE60",
-        borderRadius: "100px",
+        flexWrap: "wrap",
+        border: "none",
+        borderRadius: "0",
         "& > button.Mui-selected": {
           "& > span": {
             color: "#FFFFFF!important",
           },
         },
         "& > button:hover": {
-          backgroundColor: "initial",
+          backgroundColor: "#27AE60",
         },
-        "& > button:hover > span": {
-          color: "#27AE60!important",
+        "& > button:hover > span > span": {
+          color: "white!important",
         },
         "& > button": {
-          width: "50%",
+          width: "auto",
           borderRadius: "100px!important",
           border: "none",
+          padding: '12px 24px',
+          backgroundColor: '#f3f3f3',
+          marginRight: 8,
+          marginBottom: 8
         },
       },
       toggleText: {
@@ -156,16 +162,43 @@ const useStyles = makeStyles((theme: Theme) =>
         transition: "all 1s ease-in",
       },
       item3: {
-        display: "flex",
+        background: "#FFFFFF",
         width: "100%",
-        flexWrap: "nowrap",
-        alignItems: "flex-start",
-        marginBottom: 50,
+        marginBottom: 30,
+        boxShadow:
+          "0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 10px 20px rgba(0, 0, 0, 0.04)",
+        borderRadius: 8,
+        display: 'flex',
+        padding: "20px",
+        alignItems: 'center',
         "& > img": {
-          marginBottom: 42,
-          marginRight: 24,
-          height: 60,
+          width: 40,
+          maxHeight: 40,
+          marginRight: 16,
         },
+      },
+      item2: {
+        background: "#FFFFFF",
+        width: "100%",
+        marginBottom: 30,
+        boxShadow:
+          "0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 10px 20px rgba(0, 0, 0, 0.04)",
+        borderRadius: 8,
+        display: 'flex',
+        padding: "20px",
+        alignItems: 'center',
+        "& > img": {
+          width: 40,
+          maxHeight: 40,
+          marginRight: 16,
+        },
+      },
+      hintTitle: {
+        position: "relative",
+        top: 0,
+      },
+      tabsContent: {
+        marginTop: 26,
       },
     },
     [theme.breakpoints.between("md", "xl")]: {
@@ -328,6 +361,13 @@ const useStyles = makeStyles((theme: Theme) =>
           height: 60,
         },
       },
+      hintTitle: {
+        position: "relative",
+        top: -50,
+      },
+      tabsContent: {
+        marginTop: 56,
+      },
     },
     link: {
       color: "#249052",
@@ -375,9 +415,6 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "space-between",
       fontSize: 12,
     },
-    tabsContent: {
-      marginTop: 56,
-    },
     input: {
       display: "block",
       width: "100%",
@@ -419,10 +456,6 @@ const useStyles = makeStyles((theme: Theme) =>
           padding: "0 16px 16px 0",
         },
       },
-    },
-    hintTitle: {
-      position: "relative",
-      top: -50,
     },
   })
 );

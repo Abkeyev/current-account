@@ -27,9 +27,10 @@ const useStyles = makeStyles((theme: Theme) =>
       title: {
         fontFamily: "Roboto",
         fontWeight: "bold",
-        fontSize: 28,
+        fontSize: 24,
         color: "#141414",
-        marginBottom: 40,
+        marginBottom: 30,
+        lineHeight: '28px'
       },
       tabs: {
         marginTop: 40,
@@ -58,12 +59,25 @@ const useStyles = makeStyles((theme: Theme) =>
         },
       },
       tab: {
+        "& > div > span": {
+          display: 'none'
+        },
         "& > div > div": {
-          borderBottom: "3px solid #B9B9B9",
-          overflowX: "scroll",
+          borderBottom: "none",
+          overflowX: "hidden",
           position: "relative",
+          flexWrap: 'wrap',
+          '& > button.Mui-selected': {
+            backgroundColor: '#27AE60',
+            color: 'white!important'
+          },
           "& > button": {
             maxWidth: "100%",
+            backgroundColor: '#f3f3f3',
+            padding: '12px 24px',
+            borderRadius: 100,
+            marginBottom: 8,
+            marginRight: 8,
             "& > span": {
               whiteSpace: "nowrap",
             },

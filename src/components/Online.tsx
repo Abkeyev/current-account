@@ -24,6 +24,8 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       title: {
         marginBottom: 30,
+        fontSize: 24,
+        lineHeight: '28px'
       },
       subitle: {
         marginBottom: 30,
@@ -74,6 +76,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
       },
       qr: {
+        display: 'none',
         "& > img": {
           width: "50%",
         },
@@ -122,7 +125,7 @@ const useStyles = makeStyles((theme: Theme) =>
         color: "#80868C",
       },
       stepper: {
-        padding: "40px 0 60px",
+        padding: "20px 0",
       },
       nextBtn: {
         minWidth: 250,
@@ -407,7 +410,7 @@ const Banner = () => {
                 </BccTypography>
                 <BccTypography type="p2" block className={classes.starSteps}>
                   <span>•</span> {t("online.step2text1")}{" "}
-                  <BccLink target="_blank" href="#">
+                  <BccLink target="_blank" href="https://www.bcc.kz/upload/iblock/3c7/3c71600d4da4642fc5974b894ba3c8be.pdf">
                     {t("online.step2text1_2")}
                   </BccLink>
                 </BccTypography>
@@ -484,7 +487,7 @@ const Banner = () => {
               </Grid>
               <Grid item className={classes.starBlock2}>
                 <BccTypography type="p2" block className={classes.starSteps}>
-                  {t("online.step6text1")}
+                  {t("online.step5text1")}
                 </BccTypography>
               </Grid>
             </Grid>

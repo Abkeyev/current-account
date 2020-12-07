@@ -66,13 +66,31 @@ const useStyles = makeStyles((theme: Theme) =>
       select: {
         position: "absolute",
         right: 20,
-        top: 50,
+        top: 20,
         color: "#141414",
         "&:hover:not(.Mui-disabled):before": {
           borderBottom: 0,
         },
         "&::after, &::before": {
           borderBottom: 0,
+        },
+      },
+      block: {
+        "& > div:last-child": {
+          marginBottom: 30,
+        },
+        "& > div": {
+          flexDirection: 'row',
+          display: 'flex',
+          marginBottom: 12,
+          "& > span": {
+            display: 'flex',
+          },
+          "& > span:first-child": {
+            color: "#249052",
+            marginRight: 6,
+            fontSize: 24,
+          },
         },
       },
     },

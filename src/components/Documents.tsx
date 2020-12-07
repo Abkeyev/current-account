@@ -16,6 +16,8 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       title: {
         marginBottom: 30,
+        fontSize: 24,
+        lineHeight: '28px'
       },
       subitle: {
         marginBottom: 30,
@@ -152,6 +154,34 @@ const useStyles = makeStyles((theme: Theme) =>
           marginBottom: 42,
           marginRight: 24,
           height: 60,
+        },
+      },
+      docs: {
+        marginTop: 24,
+        backgroundColor: "#ffffff",
+        boxShadow:
+          "0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04)",
+        borderRadius: 8,
+        "& > div:nth-child(2n)": {
+          backgroundColor: "#fafafa",
+        },
+        "& > div:first-child": {
+          display: "block",
+        },
+        "& > div": {
+          width: "100%",
+          marginBottom: 0,
+          display: "flex",
+          boxSizing: "border-box",
+          padding: "24px",
+          flexWrap: "nowrap",
+          alignItems: "center",
+          "& > a": {
+            color: "#000D1A",
+          },
+          "& > img": {
+            marginRight: 24,
+          },
         },
       },
     },

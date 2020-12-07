@@ -22,6 +22,9 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: 20,
       backgroundColor: "#FFFFFF",
       borderRadius: 8,
+      ["@media (max-width:600px)"]: {
+        top: 'initial',
+      },
     },
     chip: {
       marginBottom: 20,
@@ -54,14 +57,24 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: 12,
     },
     calcContent: {
+      ["@media (max-width:600px)"]: {
+        flexWrap: 'wrap'
+      },
       "& > div:first-child": {
         width: "calc(65% - 12px)",
+        ["@media (max-width:600px)"]: {
+          width: "100%",
+          marginBottom: 12
+        },
       },
       "& > div:last-child": {
         width: "calc(35% - 12px)",
         backgroundColor: "#FAFAFA",
         padding: 20,
         borderRadius: 8,
+        ["@media (max-width:600px)"]: {
+          width: "100%",
+        },
       },
     },
     input: {
@@ -100,11 +113,10 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const Calulator = (props: any) => {
+const Calulator = () => {
   const classes = useStyles({});
-  const [sum, setSum] = React.useState(2500000);
-  const [agree, setAgree] = React.useState(true);
-  const [period, setPeriod] = React.useState(30);
+  const [sum, setSum] = React.useState<string>("2500000");
+  const [period, setPeriod] = React.useState("30");
   const { t } = useTranslation();
   return (
     <div className={classes.calc}>
@@ -121,16 +133,22 @@ const Calulator = (props: any) => {
               <BccInput
                 label={t("lks.4sum")}
                 key="sum"
-                value={sum + " ₸"}
+                value={`${sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")}${
+                  sum !== "" ? " ₸" : ""
+                }`}
                 variant="filled"
                 InputLabelProps={{
                   shrink: true,
                 }}
-                onChange={(e: any) =>
-                  +e.target.value.slice(0, -2) > 5000000
-                    ? setSum(5000000)
-                    : setSum(e.target.value.slice(0, -2))
-                }
+                onFocus={() => setSum("")}
+                onChange={(e: any) => {
+                  const s = +e.target.value.replace(
+                    /[^a-zA-Z0-9]/g,
+                    ""
+                  );
+                  if (s > 5000000) setSum("5000000");
+                  else setSum(s.toString());
+                }}
                 className={classes.input}
               />
               <BccSlider
@@ -145,9 +163,9 @@ const Calulator = (props: any) => {
                 min={0}
                 max={30000000}
                 step={10000}
-                value={sum}
+                value={+sum}
                 valueLabelDisplay="off"
-                defaultValue={sum}
+                defaultValue={+sum}
                 onChange={(e: any, val: any) =>
                   setSum(val instanceof Array ? val[1] : val)
                 }
@@ -163,16 +181,22 @@ const Calulator = (props: any) => {
               <BccInput
                 label={t("lks.4period")}
                 key="period"
-                value={period + " д."}
+                value={`${period}${
+                  period !== "" ? " д." : ""
+                }`}
+                onFocus={() => setPeriod("")}
                 variant="filled"
                 InputLabelProps={{
                   shrink: true,
                 }}
-                onChange={(e: any) =>
-                  +e.target.value.slice(0, -3) > 48
-                    ? setPeriod(48)
-                    : setPeriod(+e.target.value.slice(0, -3))
-                }
+                onChange={(e: any) => {
+                  const s = e.target.value.replace(
+                    /[^0-9]/g,
+                    ""
+                  );
+                  if (s > 30) setPeriod('30');
+                  else setPeriod(s);
+                }}
                 className={classes.input}
               />
               <BccSlider
@@ -189,7 +213,7 @@ const Calulator = (props: any) => {
                 step={1}
                 value={period}
                 valueLabelDisplay="off"
-                defaultValue={sum}
+                defaultValue={period}
                 onChange={(e: any, val: any) =>
                   setPeriod(val instanceof Array ? val[1] : val)
                 }
@@ -221,14 +245,13 @@ const Calulator = (props: any) => {
                 block
                 align="right"
                 mt="6px"
-                type="p2"
+                type="p3"
                 weight="medium"
                 className="total"
               >
-                {Math.round(sum + ((sum * 0.22) / 365) * period + sum * 0.005)
+                {Math.round(+sum + ((+sum * 0.22) / 365) * +period + +sum * 0.005)
                   .toString()
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}
-                ₸
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₸
               </BccTypography>
             </Grid>
             <Grid item>
