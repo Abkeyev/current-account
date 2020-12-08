@@ -269,7 +269,12 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const Banner = () => {
+interface BannerProps {
+  lang: string;
+}
+
+const Banner = (props: BannerProps) => {
+  const { lang } = props
   const steps1 = [1, 2, 3, 4, 5, 6];
   const classes = useStyles({});
   const [activeStep, setActiveStep] = React.useState(1);
@@ -409,10 +414,22 @@ const Banner = () => {
                   <span>•</span> {t("online.step2text0")}
                 </BccTypography>
                 <BccTypography type="p2" block className={classes.starSteps}>
-                  <span>•</span> {t("online.step2text1")}{" "}
-                  <BccLink target="_blank" href="https://www.bcc.kz/upload/iblock/3c7/3c71600d4da4642fc5974b894ba3c8be.pdf">
-                    {t("online.step2text1_2")}
-                  </BccLink>
+                  <span>•</span> {
+                    lang === 'kz' ? (
+                      <>
+                      <BccLink target="_blank" href="https://www.bcc.kz/upload/iblock/3c7/3c71600d4da4642fc5974b894ba3c8be.pdf">
+                          {t("online.step2text1")}
+                        </BccLink>{" "}{t("online.step2text1_2")}
+                      </>
+                    ) : (
+                      <>
+                      {t("online.step2text1")}{" "}
+                        <BccLink target="_blank" href="https://www.bcc.kz/upload/iblock/3c7/3c71600d4da4642fc5974b894ba3c8be.pdf">
+                          {t("online.step2text1_2")}
+                        </BccLink>
+                      </>
+                    )
+                  }
                 </BccTypography>
                 <BccTypography
                   type="p2"

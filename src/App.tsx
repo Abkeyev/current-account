@@ -36,7 +36,7 @@ function App() {
         lang={lang}
         changeLang={handleLangChange}
       />
-      <Online />
+      <Online lang={lang} />
       <Benefits />
       <Additional />
       <Order scrollToOrder={scrollToOrderRef} refProp={orderRef} />
