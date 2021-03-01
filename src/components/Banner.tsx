@@ -65,8 +65,8 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       select: {
         position: "absolute",
-        right: 20,
-        top: 20,
+        right: 24,
+        top: 24,
         color: "#141414",
         "&:hover:not(.Mui-disabled):before": {
           borderBottom: 0,
@@ -108,7 +108,7 @@ const useStyles = makeStyles((theme: Theme) =>
         position: "relative",
         margin: "0 auto",
         width: "100%",
-        padding: "60px 140px 150px",
+        padding: "0 140px 150px",
         boxSizing: "border-box",
       },
       title: {
@@ -139,7 +139,7 @@ const useStyles = makeStyles((theme: Theme) =>
         color: "#141414",
         position: "absolute",
         right: 0,
-        top: 10,
+        top: 24,
         paddingLeft: 7,
         fontSize: 14,
         backgroundColor: "white",
@@ -157,6 +157,10 @@ const useStyles = makeStyles((theme: Theme) =>
           backgroundColor: "transparent",
         },
       },
+    },
+    logo: {
+      marginTop: 24,
+      marginBottom: 40
     },
     link: {
       color: "#249052",
@@ -210,6 +214,9 @@ const Banner = (props: any) => {
     <div className={classes.containerOut}>
       <div className={classes.container}>
         <div className={classes.innerContainer}>
+          <a href="https://www.bcc.kz/">
+            <img className={classes.logo} src="logo.svg" alt="BCC logo" />
+          </a>
           <Select
             className={classes.select}
             value={props.lang}
